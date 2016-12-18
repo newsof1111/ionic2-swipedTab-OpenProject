@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title><ion-icon name="ionic"></ion-icon> IONIC 2 <small>SWIPED TAB</small></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding has-bouncing="false">
+  <ion-segment color="dark">
+      <ion-segment-button style="border:none;" (click)="select(0)" [ngClass]="{SKactiveSegment: selected===0}">
+        TAB1
+
+      </ion-segment-button>
+      <ion-segment-button  style="border:none;"  (click)="select(1)"[ngClass]="{SKactiveSegment: selected===1}">
+        TAB2
+      </ion-segment-button>
+     
+    </ion-segment>
+     <div id='indicator'class="indicatorSegment" >  
+        
+      </div>
+<ion-slides
+
+(pan)="panEvent($event)"
+ #mySlider (ionDrag)="onSlideChanged($event)" 
+[options]="mySlideOptions">
+  <ion-slide>
+    <h1>TAB1</h1>
+  </ion-slide>
+  <ion-slide>
+    <h1>TAB2</h1>
+  </ion-slide>
+ 
+</ion-slides>
+</ion-content>
